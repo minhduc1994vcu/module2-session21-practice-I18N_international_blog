@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{login.title}"></title>
+</head>
+<body>
+<h1 th:text="#{login.heading}"></h1>
+Language: <a href="?lang=en">English</a> | <a href="?lang=haw">Haiwaii</a>
+<form th:action="@{/login}" th:object="${credential}" method="post">
+<!--    table>tr*3>td*3-->
+    <table>
+        <tr>
+            <td th:text="#{login.username_label}"></td>
+            <td><input type="text" th:field="*{user_name}"></td>
+        </tr>
+        <tr>
+            <td th:text="#{login.password_label}"></td>
+            <td><input type="password" th:field="*{pass_word}"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" th:value="#{login.submit_label}"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
